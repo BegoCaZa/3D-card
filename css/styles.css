@@ -25,4 +25,56 @@ nav ul {
 body {
   margin: 0;
   font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  height: 100vh;
+
+}
+
+.card{
+  position: relative;
+  width: 300px;
+  height: 400px;
+  perspective: 500px;
+  /* overflow: hidden; */
+
+}
+
+.card-back,.card-front{
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: .5rem ;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 5px 5px 5px rgb(0, 0,0/0.6);
+  transition: rotate 1s;
+  backface-visibility: hidden;
+}
+
+.card-front{
+  background-image: url(../assets/images/abby.jpg);
+  rotate: y 180deg; 
+}
+
+.card-back{
+  background-image: url(../assets/images/last-of-us-back.jpeg);
+}
+
+/* .card:hover .card-front{
+  rotate: y 360deg;
+} */
+
+@media (hover:hover){
+  .card:hover .card-front{
+    rotate: y 360deg;
+  }
+  .card:hover .card-back{
+    rotate: y 180deg;
+  }
 }
